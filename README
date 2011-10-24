@@ -1,1 +1,9 @@
 Our Gentoo Overlay with useful ebuilds.
+
+
+To use simply do:
+  git clone git://github.com/doubledrones/gentoo_overlay.git /usr/local/portage
+
+And insert these lines to /etc/make.conf
+  # If you have layman installed, this line must be below the layman make.conf line
+  PORTDIR_OVERLAY="${PORTDIR_OVERLAY} /usr/local/portage/"
