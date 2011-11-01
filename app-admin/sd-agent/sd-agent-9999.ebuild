@@ -2,9 +2,11 @@
 # Distributed under the terms of the BSD License
 # $Header: $
 
+EAPI="4"
+EGIT_REPO_URI="git://github.com/boxedice/sd-agent.git"
+
 DESCRIPTION="Agent for ServerDensity failure detection system."
 HOMEPAGE="http://serverdensity.com/"
-SRC_URI="http://www.serverdensity.com/downloads/sd-agent.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -12,6 +14,14 @@ KEYWORDS="x86 amd64"
 IUSE=""
 
 NEED_PYTHON=2.4
+
+inherit git-2
+
+S="${WORKDIR}/${PN}"
+
+src_unpack() {
+  git clone ${EGIT_REPO_URI} ${S}
+}
 
 S="${WORKDIR}/${PN}"
 
